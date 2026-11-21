@@ -1,0 +1,99 @@
+/* Protótipo de portfólio - HTML/CSS puro. Fontes: Google Fonts (Poppins, Inter). */
+:root{
+  --bg:#1B1C1E;
+  --surface:#242527;
+  --surface-2:#2D2E31;
+  --border:#3A3B3F;
+  --text:#ECEAE6;
+  --muted:#A9A7A2;
+  --accent:#4EA1E8;
+  --accent-hover:#7BB9EE;
+  --on-accent:#121315;
+  --radius:8px;
+  --max:1080px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--text);font:400 1rem/1.65 "Inter",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Poppins",system-ui,sans-serif;font-weight:600;line-height:1.2;letter-spacing:-.01em}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:var(--accent-hover);text-decoration:underline}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+section{padding:72px 0;border-top:1px solid var(--border)}
+section.first{border-top:0}
+.eyebrow{font-size:.8125rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+h2{font-size:1.75rem;margin-bottom:32px}
+
+/* Cabeçalho */
+header.top{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);height:64px}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:"Poppins",sans-serif;font-weight:600;color:var(--text)}
+.brand:hover{color:var(--text);text-decoration:none}
+nav ul{display:flex;gap:28px;list-style:none}
+nav a{color:var(--muted);font-size:.9375rem;padding:6px 0;border-bottom:2px solid transparent}
+nav a:hover{color:var(--text);text-decoration:none;border-color:var(--accent)}
+
+/* Botões */
+.btn{display:inline-block;padding:12px 22px;border-radius:var(--radius);font-weight:600;font-size:.9375rem;min-height:44px;border:1px solid transparent}
+.btn:hover{text-decoration:none}
+.btn-primary{background:var(--accent);color:var(--on-accent)}
+.btn-primary:hover{background:var(--accent-hover);color:var(--on-accent)}
+.btn-ghost{border-color:var(--border);color:var(--text)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--text)}
+
+/* Apresentação */
+.hero{padding:64px 0 56px}
+.hero-grid{display:grid;grid-template-columns:1fr 288px;gap:48px;align-items:center}
+.hero h1{font-size:2.75rem;margin-bottom:12px}
+.hero .role{font-size:1.25rem;color:var(--accent);font-weight:500;margin-bottom:16px}
+.hero p.lead{color:var(--muted);max-width:56ch;margin-bottom:28px}
+.hero .actions{display:flex;gap:12px;flex-wrap:wrap}
+.avatar{width:288px;height:360px;border-radius:var(--radius);object-fit:cover;object-position:50% 20%;border:1px solid var(--border);display:block}
+
+/* Cards de projeto */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;color:var(--text);transition:border-color .15s,background .15s}
+.card:hover{border-color:var(--accent);background:var(--surface-2);text-decoration:none;color:var(--text)}
+.card:hover .more{color:var(--accent-hover)}
+.card .tag-area{font-size:.8125rem;color:var(--muted);margin-bottom:8px}
+.card h3{font-size:1.25rem;margin-bottom:8px}
+.card p{color:var(--muted);font-size:.9375rem;margin-bottom:16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin-bottom:20px}
+.chips li{font-size:.8125rem;background:var(--bg);border:1px solid var(--border);color:var(--muted);padding:3px 10px;border-radius:999px}
+.more{margin-top:auto;font-weight:600;font-size:.9375rem;color:var(--accent)}
+
+/* Sobre */
+.about > div{max-width:760px}
+.about p{color:var(--muted);margin-bottom:16px;max-width:68ch}
+.about .stack{color:var(--text);margin-top:24px;padding-top:16px;border-top:1px solid var(--border)}
+.about .stack b{font-weight:600}
+
+/* Ferramentas */
+.tools{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.tools .ico{display:block;color:var(--accent);margin-bottom:14px}
+.tools h3{font-size:1rem;margin-bottom:12px}
+.tools ul{list-style:none}
+.tools li{color:var(--muted);font-size:.9375rem;padding:4px 0}
+
+/* Linha do tempo (experiência e formação) */
+.timeline{list-style:none;border-left:1px solid var(--border);margin-left:6px}
+.timeline li{position:relative;padding:0 0 32px 28px}
+.timeline li::before{content:"";position:absolute;left:-5px;top:8px;width:9px;height:9px;border-radius:50%;background:var(--accent)}
+.timeline .date{font-size:.8125rem;color:var(--muted);letter-spacing:.04em}
+.timeline h3{font-size:1.125rem;margin:2px 0 2px}
+.timeline .org{color:var(--muted);font-size:.9375rem;margin-bottom:8px}
+.timeline ul{margin-left:18px;color:var(--muted);font-size:.9375rem}
+.timeline ul li{padding:0 0 4px 0;position:static}
+.timeline ul li::before{display:none}
+
+/* Detalhe do projeto */
+
+.contact{list-style:none}
+.contact li{color:var(--muted);margin-bottom:8px}
+.contact b{color:var(--text);font-weight:600}
+footer{border-top:1px solid var(--border);padding:32px 0;color:var(--muted);font-size:.875rem}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* Celular */
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
